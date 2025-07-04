@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Cube Guy Typing Challenge</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://esm.sh/three@0.160.0?dev",
+          "three/": "https://esm.sh/three@0.160.0&dev/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="gameContainer">
+      <div id="typingUI">
+        <div id="settings">
+          <label for="timeLimit">Select Time:</label>
+          <select id="timeLimit">
+            <option value="15">15 Seconds</option>
+            <option value="30">30 Seconds</option>
+            <option value="60">30 Seconds</option>
+            <option value="120">2 Minutes</option>
+            <option value="300">5 Minutes</option>
+          </select>
+          <button id="startButton">Start Game</button>
+        </div>
+        <div id="stats">
+          <div class="stat">
+            <div>WPM</div>
+            <div id="wpm">0</div>
+          </div>
+          <div class="stat">
+            <div>Accuracy</div>
+            <div id="accuracy">100%</div>
+          </div>
+          <div class="stat">
+            <div>Progress</div>
+            <div id="progress">0/0</div>
+          </div>
+          <div class="stat">
+            <div>Time</div>
+            <div id="time">0:00</div>
+          </div>
+        </div>
+        <div id="textDisplay"></div>
+      </div>
+      <div id="instructions">
+        Select a time limit and click "Start Game" to begin!
+      </div>
+
+      <div id="resultScreen" class="hidden">
+        <h2>Game Over!</h2>
+        <div class="final-stats">
+          <p>Final WPM: <span id="finalWpm">0</span></p>
+          <p>Final Accuracy: <span id="finalAccuracy">0%</span></p>
+          <p>Total Correct Characters: <span id="finalCorrectChars">0</span></p>
+          <p>Total Errors: <span id="finalErrors">0</span></p>
+        </div>
+        <button id="restartButton">Play Again</button>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+    <script src="https://storage.googleapis.com/rosebud_staticfiles/ChatManager.js"></script>
+    <script src="https://storage.googleapis.com/rosebud_staticfiles/ImageGenerator.js"></script>
+    <script src="https://storage.googleapis.com/rosebud_staticfiles/ProgressLogger.js"></script>
+    <script src="https://storage.googleapis.com/rosebud_staticfiles/OGP.js"></script>
+  </body>
+</html>
